@@ -18,6 +18,7 @@ public class DataServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
@@ -26,10 +27,26 @@ public class DataServlet extends HttpServlet {
 		for (String hobby : request.getParameterValues("hobby")) {
 			selectedHobby += hobby + " ";
 		}
+		
+		String selectedNumbers = "";
+		for (String select : request.getParameterValues("select")) {
+			selectedNumbers += select + " ";
+		}
+		
+		String age = "";
+		if(request.getParameter("age").matches("^[0-9]+$")){
+			age = request.getParameter("age");
+		} else {
+			age = "ERROR";
+		}
+
 		out.println("<html><body><h2>Your data</h2>" +
 				"<p>First name: " + request.getParameter("firstName") + "<br />" +
 				"<p>Your hobby: " + selectedHobby + "<br />" +
+				"<p>Your age: " + age + "<br />" +
+				"<p>Your numbers: " + selectedNumbers + "<br />" +
 				"</body></html>");
+
 		out.close();
 	}
 

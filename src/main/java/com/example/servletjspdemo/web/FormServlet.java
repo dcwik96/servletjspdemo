@@ -17,7 +17,8 @@ public class FormServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
+
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
@@ -27,7 +28,19 @@ public class FormServlet extends HttpServlet {
 				"<input type='checkbox' name='hobby' value='bicycle'>I like riding a bicycle<br />" +
 				"<input type='checkbox' name='hobby' value='tv'>I like watching TV<br />" +
 				"<input type='checkbox' name='hobby' value='beer'>I like dringking beer<br />" +
-				"<input type='checkbox' name='hobby' value='books'>I like reading books<br />" +
+				"<input type='checkbox' name='hobby' value='books'>I like reading books<br /><br />" +
+				
+				"<input type='textarea' name='age' value='How old are you?'><br /><br />" +
+				
+				"<select name='select' multiple>" +
+				"    <option value='first'>1</option>" +
+				"    <option value='second'>2</option>" +
+				"    <option value='third'>3</option>" +
+				"    <option value='fourth'>4</option>" +
+				"</select>Wybierz liczbe/liczby<br /><br />" +
+				
+				"<input type='radio' name='acc' value='radio'>Akceptuje warunki umowy<br />" +
+				
 				"<input type='submit' value=' OK ' />" +
 				"</form>" +
 				"</body></html>");
