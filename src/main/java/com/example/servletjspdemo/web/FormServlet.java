@@ -19,7 +19,7 @@ public class FormServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 
-		response.setContentType("text/html");
+		response.setContentType("text/html; charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html><body><h2>Introduce yourself</h2>" +
